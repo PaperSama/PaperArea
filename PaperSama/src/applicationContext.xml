@@ -5,8 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<mvc:annotation-driven></mvc:annotation-driven>
-	
+	<mvc:annotation-driven/>
+
 	<!-- 加载配置文件 -->
 	<bean id="config"
 		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
@@ -42,4 +42,5 @@
 		<property name="basePackage" value="com.paper.mapper"></property>
 	</bean>
 
+	<!-- 上边不要动 从这里开始 -->
 </beans>
