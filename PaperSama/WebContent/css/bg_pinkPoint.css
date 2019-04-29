@@ -9,5 +9,5 @@ body {
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url('/src/background/tilebg.png') repeat fixed;
+	background: url('/resource/background/tilebg.png') repeat fixed;
 }
