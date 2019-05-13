@@ -7,12 +7,7 @@
 	<display-name>PaperSama</display-name>
 	
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>views/index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<!-- The front controller of this Spring Web application, responsible for handling all application requests -->
