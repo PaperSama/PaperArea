@@ -44,4 +44,10 @@
 	</bean>
 
 	<!-- 上边不要动 从这里开始 -->
+	
+	<!-- 文件上传 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="-1"></property>
+	</bean>
 </beans>
