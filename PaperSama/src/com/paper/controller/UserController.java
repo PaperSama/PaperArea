@@ -1,5 +1,6 @@
 package com.paper.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("login")
-	ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password) {
+	ModelAndView login(HttpServletRequest request, @RequestParam("username") String username, @RequestParam("password") String password) {
 		
 		User user = new User(0, username, password);
 		
@@ -29,8 +30,10 @@ public class UserController {
 		
 		ModelAndView mv = null;
 		
+		request.getSession().setAttribute("username", username);
+		
 		if(flag) {
-			mv = new ModelAndView("index");
+			mv = new ModelAndView("redirect:/.");
 		}else {
 			mv = new ModelAndView("login");
 		}

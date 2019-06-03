@@ -22,8 +22,14 @@
 	</head>
 	<body>
 		<header style="float: right">
-			<a href="login">登录</a>
-			<a href="register">注册</a>
+		<c:if test="${empty username}">		
+			<a class="layui-btn" href="login">登录</a>
+			<a class="layui-btn" href="register">注册</a>
+		</c:if>
+		<c:if test="${not empty username}">
+			<c:out value="${username}"></c:out>
+			<a class="layui-btn" href="logout">退出</a>
+		</c:if>
 		</header>
 		<div>
 			<h1 class="layui-bg-green" style="text-align: center">欢迎来到 PaperArea</h1>

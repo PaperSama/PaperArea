@@ -1,7 +1,7 @@
 layui.use([ 'layer', 'form' ], function() {
 	var layer = layui.layer, form = layui.form;
 
-	layer.msg('Hello World');
+	layer.msg('已进入 PaperArea');
 });
 
 $(function(){
@@ -14,6 +14,7 @@ $(function(){
 		$("body").css("background-position", num + "px " + num + "px");
 	},50);
 })
+
 /*
 $(document).scroll(function(){
 	var scrollHigh = $(document).scrollTop();
