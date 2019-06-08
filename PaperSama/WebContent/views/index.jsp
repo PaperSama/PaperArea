@@ -106,10 +106,10 @@
 				<h2>但你需要先<a href="login">登录</a>才能留言</h2>
 			</c:if>
 			<c:if test="${not empty username}">
-			<form action="addComment" method="post" style="text-align: center;" class="layui-form">
-				<textarea rows="10" cols="100" name="comment" class="layui-textarea" placeholder="请畅所欲言，对美观度、内容、功能等都可以提出意见。"></textarea><br />
-				<input type="submit" value="留言" class="layui-btn"/>
-			</form>
+				<form action="addComment" method="post" style="text-align: center;" class="layui-form">
+					<textarea rows="10" cols="100" name="comment" class="layui-textarea" placeholder="请畅所欲言，对美观度、内容、功能等都可以提出意见。"></textarea><br />
+					<input type="submit" value="留言" class="layui-btn"/>
+				</form>
 			</c:if>
 		</div>
 		<div>

@@ -18,9 +18,9 @@ public class AjaxController {
 		this.userService = userService;
 	}
 	
-	@RequestMapping("checkName")
+	@RequestMapping(value="checkName",produces={"text/html;charset=UTF-8;","application/json;"})
 	String checkName(HttpServletRequest request) {
 		String username = request.getParameter("arg");
-		return userService.checkName(username)?"OK !":"× Name Used";
+		return userService.checkName(username)?"":"× 此用户名已被使用";
 	}
 }

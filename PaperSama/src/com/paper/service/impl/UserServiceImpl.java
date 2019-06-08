@@ -33,8 +33,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean registerNewUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean accept = false;
+		String result = userMapper.userNameExist(user.getUsername());
+		if(result == null) {
+			userMapper.addNewUser(user);
+			accept = true;
+		}
+		return accept;
 	}
 
 	@Override
