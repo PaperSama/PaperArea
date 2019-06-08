@@ -106,14 +106,16 @@
 				<h2>但你需要先<a href="login">登录</a>才能留言</h2>
 			</c:if>
 			<c:if test="${not empty username}">
-				<form action="addComment" method="post" style="text-align: center;" class="layui-form">
-					<textarea rows="10" cols="100" name="comment" class="layui-textarea" placeholder="请畅所欲言，对美观度、内容、功能等都可以提出意见。"></textarea><br />
+				<form action="/comment/add" method="post" style="text-align: center;" class="layui-form">
+					<input type="hidden" name="username" value="${username}"/>
+					<textarea rows="10" cols="100" name="comment" class="layui-textarea" placeholder="请畅所欲言，对美观度、内容、功能等都可以提出意见。" required="required"></textarea><br />
 					<input type="submit" value="留言" class="layui-btn"/>
 				</form>
 			</c:if>
 		</div>
 		<div>
-			<a>查看所有留言</a>
+			<a id="show">查看所有留言</a>
+			<div id="comment"></div>
 		</div>
 		
 		<footer>
@@ -122,4 +124,20 @@
 			<a href="http://www.beian.miit.gov.cn">宁ICP备18001958号-1</a>
 		</footer>
 	</body>
+	<script>
+		$(function(){
+			$("a#show").mousedown(function(){
+				$.getJSON("/comment/show",function(result){
+					$("#comment").empty();
+					$.each(result, function(i, comment){
+						$("#comment").prepend("<div class=\"layui-card\" id=\"div-" + JSON.stringify(comment.id) + "\"></div>");
+						$("#div-" + JSON.stringify(comment.id)).append("<div class=\"layui-card-header\">" + (i + 1) + "：" + JSON.stringify(comment.context) + "</div>");
+							if(JSON.stringify(comment.re)!="null"){
+								$("#div-" + JSON.stringify(comment.id)).append("<div class=\"layui-card-hody\">开发者回复：" + JSON.stringify(comment.re) + "</div>");
+							}
+					})
+				});
+			});
+		});
+	</script>
 </html>

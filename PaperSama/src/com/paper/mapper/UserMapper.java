@@ -8,4 +8,5 @@ public interface UserMapper {
 	ArrayList<User> queryAllUser();
 	boolean addNewUser(User user);
 	String userNameExist(String username);
+	int queryIdByUsername(String username);
 }

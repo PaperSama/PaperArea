@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.paper.mapper.UserMapper">
+<mapper namespace="com.paper.mapper.CommentMapper">
 	<select id="queryAllComment" resultType="comment">
 		select * from `t_comment`
 	</select>
@@ -8,6 +8,12 @@
 		select * from `t_comment` where id = #{id}
 	</select>
 	<insert id="addNewComment" parameterType="comment">
-		insert into `t_comment`(`context`,`datetime`,`user`) values (#{context},#{datetime},#{user})
+		insert into `t_comment`(`context`,`datetime`,`user`,`hide`) values (#{context},#{datetime},#{user},0)
 	</insert>
+	<update id="addRe" parameterType="comment">
+		update `t_comment` set `re` = ${re} where id = ${id}
+	</update>
+	<update id="hideComment" parameterType="int">
+		update `t_customer` set hide = true where id = #{id}
+	</update>
 </mapper>

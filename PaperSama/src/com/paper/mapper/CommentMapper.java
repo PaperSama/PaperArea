@@ -8,4 +8,6 @@ public interface CommentMapper {
 	ArrayList<Comment> queryAllComment();
 	Comment queryCommentById(int id);
 	boolean addNewComment(Comment comment);
+	boolean addRe(Comment comment);
+	boolean hideComment(int id);
 }
