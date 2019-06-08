@@ -4,6 +4,13 @@ layui.use([ 'layer', 'form' ], function() {
 	layer.msg('已进入 PaperArea');
 });
 
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+
 $(function(){
 	var num = 0;
 	setInterval(function(){

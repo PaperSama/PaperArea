@@ -8,18 +8,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <!-- style -->
-<link rel="stylesheet" type="text/css" href="css/bg_pinkPoint.css" />
-<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" type="text/css" href="/css/bg_pinkPoint.css" />
+<link rel="stylesheet" href="/layui/css/layui.css">
 
 <!-- script -->
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-<script src="../layui/layui.js"></script>
-<script src="../js/index.js"></script>
+<script src="/layui/layui.js"></script>
+<script src="/js/index.js"></script>
 
 <!-- title -->
 <title>登录 - PaperArea</title>
 </head>
-<body>
+<body class="layui-main">
+	<h1 class="layui-bg-green">登录</h1>
+	<h2 class="layui-bg-red">${errMsg}</h2>
 	<div>
 		<form class="layui-form" action="user/login" method="post">
 			<div class="layui-form-item">
@@ -42,7 +44,7 @@
 
 			<div class="layui-form-item">
 				<div class="layui-input-block">
-					<input class="layui-btn" type="submit" value="提交">
+					<input class="layui-btn" type="submit" value="登录">
 					<input class="layui-btn layui-btn-primary" type="reset" value="重置">
 				</div>
 			</div>

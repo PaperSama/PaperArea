@@ -36,6 +36,7 @@ public class UserController {
 			mv = new ModelAndView("redirect:/.");
 		}else {
 			mv = new ModelAndView("login");
+			mv.addObject("errMsg","用户名或密码错误");
 		}
 		
 		return mv;

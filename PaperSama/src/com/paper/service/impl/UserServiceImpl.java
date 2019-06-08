@@ -31,4 +31,23 @@ public class UserServiceImpl implements UserService {
 		return flag;
 	}
 
+	@Override
+	public boolean registerNewUser(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkName(String username) {
+		boolean flag = true;
+		ArrayList<User> al = userMapper.queryAllUser();
+		for(User user : al) {
+			if(user.getUsername().equals(username)) {
+				flag = false;
+				break;
+			}
+		}
+		return flag;
+	}
+
 }
