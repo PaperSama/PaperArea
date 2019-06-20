@@ -6,11 +6,11 @@
 	
 	<display-name>PaperSama</display-name>
 	
-	<!-- 处理中文乱码 -->
 	<welcome-file-list>
 		<welcome-file>views/index.jsp</welcome-file>
 	</welcome-file-list>
 	
+	<!-- 处理中文乱码 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
